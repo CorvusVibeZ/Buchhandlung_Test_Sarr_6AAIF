@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/buchbestellungsms/buchbestellungsms.iml" filepath="$PROJECT_DIR$/buchbestellungsms/buchbestellungsms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/buchdruckms/buchdruckms.iml" filepath="$PROJECT_DIR$/buchdruckms/buchdruckms.iml" />
+    </modules>
+  </component>
+</project>
