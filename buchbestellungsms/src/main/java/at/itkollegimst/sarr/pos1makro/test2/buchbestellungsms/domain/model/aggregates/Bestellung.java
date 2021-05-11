@@ -8,6 +8,14 @@ import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.value
 import javax.persistence.*;
 
 @Entity
+@NamedQueries({
+
+        @NamedQuery(name = "Bestellung.findAll",
+                query = "Select b from Bestellung b"),
+        @NamedQuery(name = "Bestellung.findByBookingId",
+                query = "Select b from Bestellung b where b.bestellungsId = :bestellungsId"),
+        @NamedQuery(name = "Bestellung.findAllBestellungsIds",
+                query = "Select b.bestellungsId from Bestellung b") })
 public class Bestellung {
 
 
