@@ -7,20 +7,23 @@ import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.aggre
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.aggregates.BestellungsId;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.interfaces.rest.dto.BestellungAnlegenRessource;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.interfaces.rest.transform.BestellungAnlegenCommandDTOAssembler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/bestellungAnlegen")
 public class BestellungAnlegenController {
 
+    @Autowired
     private BestellungAnlegenCommandService bestellungAnlegenCommandService;
+
+    @Autowired
     private BestellungAnlegenQueryService bestellungAnlegenQueryService;
 
 
-    public BestellungAnlegenController(BestellungAnlegenCommandService bestellungAnlegenCommandService) {
-        this.bestellungAnlegenCommandService = bestellungAnlegenCommandService;
-    }
 
 
     @PostMapping
@@ -35,10 +38,12 @@ public class BestellungAnlegenController {
     }
 
 
-    @GetMapping("findBestellung")
-    @ResponseBody
-    public Bestellung findByBestellungsId(@RequestParam("bestellungsId") String bestellungsId) {
 
-        return bestellungAnlegenQueryService.find(new BestellungsId(bestellungsId));
+
+    @GetMapping
+    @ResponseBody
+    public List<Bestellung> listAll() {
+
+        return bestellungAnlegenQueryService.findAll();
     }
 }

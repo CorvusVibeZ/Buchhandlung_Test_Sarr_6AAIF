@@ -9,7 +9,7 @@ public class ISBN {
 
 
 
-    @Column(name = "ISBN")
+    @Column(name = "isbn")
     private String ISBN;
 
     public ISBN() {}

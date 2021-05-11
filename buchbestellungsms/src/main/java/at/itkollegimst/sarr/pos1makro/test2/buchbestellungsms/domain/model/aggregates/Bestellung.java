@@ -9,6 +9,7 @@ import org.springframework.data.domain.AbstractAggregateRoot;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Bestellung")
 @NamedQueries({
 
         @NamedQuery(name = "Bestellung.findAll",
@@ -48,7 +49,9 @@ public class Bestellung extends AbstractAggregateRoot<Bestellung> {
 
     @Embedded
     @Column(name = "bestellstatus")
+    @Enumerated(EnumType.STRING)
     private Bestellstatus bestellstatus;
+
 
 
 
@@ -75,5 +78,67 @@ public class Bestellung extends AbstractAggregateRoot<Bestellung> {
 
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public BestellungsId getBestellungsId() {
+        return bestellungsId;
+    }
+
+    public void setBestellungsId(BestellungsId bestellungsId) {
+        this.bestellungsId = bestellungsId;
+    }
+
+    public Buchtitel getBuchtitel() {
+        return buchtitel;
+    }
+
+    public void setBuchtitel(Buchtitel buchtitel) {
+        this.buchtitel = buchtitel;
+    }
+
+    public Autorname getAutorname() {
+        return autorname;
+    }
+
+    public void setAutorname(Autorname autorname) {
+        this.autorname = autorname;
+    }
+
+    public Beschreibung getBeschreibung() {
+        return beschreibung;
+    }
+
+    public void setBeschreibung(Beschreibung beschreibung) {
+        this.beschreibung = beschreibung;
+    }
+
+    public ISBN getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(ISBN isbn) {
+        this.isbn = isbn;
+    }
+
+    public Bestelldatum getBestelldatum() {
+        return bestelldatum;
+    }
+
+    public void setBestelldatum(Bestelldatum bestelldatum) {
+        this.bestelldatum = bestelldatum;
+    }
+
+    public Bestellstatus getBestellstatus() {
+        return bestellstatus;
+    }
+
+    public void setBestellstatus(Bestellstatus bestellstatus) {
+        this.bestellstatus = bestellstatus;
+    }
 }

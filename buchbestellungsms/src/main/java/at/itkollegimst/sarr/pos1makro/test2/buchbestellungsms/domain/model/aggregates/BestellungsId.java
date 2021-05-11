@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class BestellungsId implements Serializable {
 
 
-    @Column(name = "bestellungsId")
+    @Column(name = "bestellungs_id")
     private String bestellungsId;
 
 

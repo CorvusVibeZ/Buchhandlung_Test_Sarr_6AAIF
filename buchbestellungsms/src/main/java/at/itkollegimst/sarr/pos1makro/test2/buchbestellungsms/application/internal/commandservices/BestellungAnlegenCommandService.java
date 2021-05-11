@@ -4,6 +4,7 @@ import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.aggre
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.aggregates.BestellungsId;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.commands.BestellungAnlegenCommand;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.infrastructure.brokers.repositories.BestellungsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -12,12 +13,10 @@ import java.util.UUID;
 public class BestellungAnlegenCommandService {
 
 
+    @Autowired
     private BestellungsRepository bestellungsRepository;
 
 
-    public BestellungAnlegenCommandService(BestellungsRepository bestellungsRepository) {
-        this.bestellungsRepository = bestellungsRepository;
-    }
 
 
     public BestellungsId bestellungAnlegen(BestellungAnlegenCommand bestellungAnlegenCommand) {
