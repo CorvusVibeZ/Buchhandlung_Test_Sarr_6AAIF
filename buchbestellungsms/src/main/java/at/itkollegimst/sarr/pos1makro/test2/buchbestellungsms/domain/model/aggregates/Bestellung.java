@@ -4,6 +4,7 @@ package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.aggr
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.commands.BestellungAnlegenCommand;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.entities.*;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.valueobjects.Bestellstatus;
+import org.springframework.data.domain.AbstractAggregateRoot;
 
 import javax.persistence.*;
 
@@ -16,7 +17,7 @@ import javax.persistence.*;
                 query = "Select b from Bestellung b where b.bestellungsId = :bestellungsId"),
         @NamedQuery(name = "Bestellung.findAllBestellungsIds",
                 query = "Select b.bestellungsId from Bestellung b") })
-public class Bestellung {
+public class Bestellung extends AbstractAggregateRoot<Bestellung> {
 
 
     @Id
@@ -65,8 +66,12 @@ public class Bestellung {
         this.bestelldatum = new Bestelldatum(bestellungAnlegenCommand.getBestelldatum());
         this.bestellstatus = Bestellstatus.NICHT_BESTELLT;
 
+    }
 
 
+    public void addDomainEvent(Object event) {
+
+        registerEvent(event);
 
     }
 
