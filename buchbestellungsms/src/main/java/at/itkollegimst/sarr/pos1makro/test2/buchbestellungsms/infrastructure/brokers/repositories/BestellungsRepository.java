@@ -7,6 +7,7 @@ import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.value
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

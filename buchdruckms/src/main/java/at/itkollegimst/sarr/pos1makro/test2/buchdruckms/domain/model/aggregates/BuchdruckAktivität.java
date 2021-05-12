@@ -3,8 +3,6 @@ package at.itkollegimst.sarr.pos1makro.test2.buchdruckms.domain.model.aggregates
 
 import at.itkollegimst.sarr.pos1makro.test2.buchdruckms.domain.model.commands.BuchdruckAnlegenCommand;
 import at.itkollegimst.sarr.pos1makro.test2.buchdruckms.domain.model.entities.BestellungsId;
-import at.itkollegimst.sarr.pos1makro.test2.shareddomain.events.BuchdruckAktivitätEvent;
-import jdk.jfr.Name;
 import org.springframework.data.domain.AbstractAggregateRoot;
 
 import javax.persistence.*;

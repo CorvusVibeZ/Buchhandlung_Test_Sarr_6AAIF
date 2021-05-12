@@ -13,11 +13,12 @@ import java.util.UUID;
 public class BestellungAnlegenCommandService {
 
 
-    @Autowired
+
     private BestellungsRepository bestellungsRepository;
 
-
-
+    public BestellungAnlegenCommandService(BestellungsRepository bestellungsRepository) {
+        this.bestellungsRepository = bestellungsRepository;
+    }
 
     public BestellungsId bestellungAnlegen(BestellungAnlegenCommand bestellungAnlegenCommand) {
 
