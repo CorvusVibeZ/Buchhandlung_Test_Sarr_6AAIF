@@ -1,3 +1,4 @@
+/*
 package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.infrastructure.brokers.rabbitmq;
 
 import org.hibernate.internal.build.AllowSysOut;
@@ -16,3 +17,6 @@ public interface BestellungsEventSource {
     @Input(BUCHDRUCKEN)
     MessageChannel buchdrucken();
 }
+
+
+ */

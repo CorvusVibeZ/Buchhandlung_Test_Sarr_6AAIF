@@ -1,5 +1,6 @@
 package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.valueobjects;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable

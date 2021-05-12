@@ -16,7 +16,7 @@ public class BuchDruckenCommandService {
     BestellungsRepository bestellungsRepository;
 
 
-    @Transactional
+   /* @Transactional
     public void buchDrucken(String bestellundsId) {
 
 
@@ -24,6 +24,10 @@ public class BuchDruckenCommandService {
 
 
     }
+
+    */
+
+
 
 
 }

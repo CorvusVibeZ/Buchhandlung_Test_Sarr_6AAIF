@@ -20,11 +20,15 @@ public class BestellungAnlegenQueryService {
         return bestellungsRepository.findAll();
     }
 
-
+/*
     public List<BestellungsId> getAllBestellungsIds() {
 
         return bestellungsRepository.findAllBestellungsIds();
     }
+
+ */
+
+
 
     public Bestellung find(BestellungsId bestellungsId) {
 

@@ -1,4 +1,6 @@
+/*
 package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.interfaces.events;
+
 
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.application.internal.commandservices.BuchDruckenCommandService;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.infrastructure.brokers.rabbitmq.BestellungsEventSource;
@@ -19,8 +21,13 @@ public class BuchBestellungEventHandler {
     @StreamListener(target = BestellungsEventSource.BUCHDRUCKEN)
     public void receiveEvent(BuchdruckAktivitätEvent buchdruckAktivitätEvent) {
 
-        buchDruckenCommandService.buchDrucken(buchdruckAktivitätEvent.getBuchdruckAktivitätEventData().getBestellungsid());
+       buchDruckenCommandService.buchDrucken(buchdruckAktivitätEvent.getBuchdruckAktivitätEventData().getBestellungsid());
 
     }
 
+
+
+
+
 }
+        */

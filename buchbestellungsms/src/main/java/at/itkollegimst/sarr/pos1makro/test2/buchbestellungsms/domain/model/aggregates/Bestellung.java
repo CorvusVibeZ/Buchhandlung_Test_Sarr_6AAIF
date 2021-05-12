@@ -6,19 +6,21 @@ import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.entit
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.valueobjects.Bestellstatus;
 import at.itkollegimst.sarr.pos1makro.test2.shareddomain.events.BestellungAnlegenEvent;
 import at.itkollegimst.sarr.pos1makro.test2.shareddomain.events.BestellungAnlegenEventData;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.AbstractAggregateRoot;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Bestellung")
+@EnableAutoConfiguration
+@Table(name = "bestellung")
 @NamedQueries({
 
-        @NamedQuery(name = "Bestellung.findAll",
+        @NamedQuery(name = "bestellung.findAll",
                 query = "Select b from Bestellung b"),
-        @NamedQuery(name = "Bestellung.findByBookingId",
+        @NamedQuery(name = "bestellung.findByBookingId",
                 query = "Select b from Bestellung b where b.bestellungsId = :bestellungsId"),
-        @NamedQuery(name = "Bestellung.findAllBestellungsIds",
+        @NamedQuery(name = "bestellung.findAllBestellungsIds",
                 query = "Select b.bestellungsId from Bestellung b") })
 public class Bestellung extends AbstractAggregateRoot<Bestellung> {
 

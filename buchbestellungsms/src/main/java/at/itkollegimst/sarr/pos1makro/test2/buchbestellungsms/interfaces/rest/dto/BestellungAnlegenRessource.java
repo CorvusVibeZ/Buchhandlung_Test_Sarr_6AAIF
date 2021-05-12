@@ -1,6 +1,8 @@
 package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.interfaces.rest.dto;
 
 
+import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.valueobjects.Bestellstatus;
+
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -19,6 +21,8 @@ public class BestellungAnlegenRessource {
 
     private LocalDate bestelldatum;
 
+    private Bestellstatus bestellstatus;
+
     public BestellungAnlegenRessource() {}
 
 
@@ -29,6 +33,7 @@ public class BestellungAnlegenRessource {
         this.beschreibung = beschreibung;
         this.isbn = isbn;
         this.bestelldatum = bestelldatum;
+        this.bestellstatus = Bestellstatus.BESTELLT;
     }
 
     public String getBestellungsId() {
@@ -77,5 +82,13 @@ public class BestellungAnlegenRessource {
 
     public void setBestelldatum(LocalDate bestelldatum) {
         this.bestelldatum = bestelldatum;
+    }
+
+    public Bestellstatus getBestellstatus() {
+        return bestellstatus;
+    }
+
+    public void setBestellstatus(Bestellstatus bestellstatus) {
+        this.bestellstatus = bestellstatus;
     }
 }

@@ -1,6 +1,8 @@
 package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.commands;
 
 
+import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.valueobjects.Bestellstatus;
+
 import java.util.Date;
 
 public class BestellungAnlegenCommand {
@@ -18,6 +20,8 @@ public class BestellungAnlegenCommand {
 
     private Date bestelldatum;
 
+    private Bestellstatus bestellstatus;
+
     public BestellungAnlegenCommand(){}
 
     public BestellungAnlegenCommand(String bestellungsId, String buchtitel, String autorname, String beschreibung, String isbn, Date bestelldatum) {
@@ -27,6 +31,7 @@ public class BestellungAnlegenCommand {
         this.beschreibung = beschreibung;
         this.isbn = isbn;
         this.bestelldatum = bestelldatum;
+        this.bestellstatus = Bestellstatus.BESTELLT;
     }
 
     public String getBestellungsId() {
