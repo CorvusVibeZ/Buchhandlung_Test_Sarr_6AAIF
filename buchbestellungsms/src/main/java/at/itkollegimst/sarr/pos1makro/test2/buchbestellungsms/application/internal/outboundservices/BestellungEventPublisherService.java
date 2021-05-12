@@ -1,5 +1,4 @@
 
-/*
 package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.application.internal.outboundservices;
 
 
@@ -30,4 +29,3 @@ public class BestellungEventPublisherService {
 
     }
 }
-*/

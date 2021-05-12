@@ -1,5 +1,8 @@
 package at.itkollegimst.sarr.pos1makro.test2.buchdruckms.domain.model.commands;
 
+import java.util.Locale;
+import java.util.UUID;
+
 public class BuchdruckAnlegenCommand {
 
 
@@ -14,6 +17,12 @@ public class BuchdruckAnlegenCommand {
     public BuchdruckAnlegenCommand(String buchdrucknummer, String bestellungsId) {
         this.buchdrucknummer = buchdrucknummer;
         this.bestellungsId = bestellungsId;
+    }
+
+    public BuchdruckAnlegenCommand(String bestellungsId) {
+
+        this.bestellungsId = bestellungsId;
+        this.buchdrucknummer = UUID.randomUUID().toString().toUpperCase();
     }
 
     public String getBuchdrucknummer() {

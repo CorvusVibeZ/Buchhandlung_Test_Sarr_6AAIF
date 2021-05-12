@@ -1,18 +1,19 @@
-package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.infrastructure.brokers.rabbitmq;
+package at.itkollegimst.sarr.pos1makro.test2.buchdruckms.infrastructure.brokers.rabbitmq;
+
 
 import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface BestellungsEventSource {
+public interface BuchdruckAktivitätEventSource {
 
 
-    @Output("bestellungAnlegenChannel")
+    String BESTELLUNG = "bestellungAnlegenChannel";
+    @Input(BESTELLUNG)
     MessageChannel bestellungAnlegen();
 
 
-    String BUCHDRUCKEN = "buchdruckenChannel";
-    @Input(BUCHDRUCKEN)
+    @Output("buchdruckenChannel")
     MessageChannel buchdrucken();
 }

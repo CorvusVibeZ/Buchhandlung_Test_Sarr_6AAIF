@@ -4,6 +4,8 @@ package at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.aggr
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.commands.BestellungAnlegenCommand;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.entities.*;
 import at.itkollegimst.sarr.pos1makro.test2.buchbestellungsms.domain.model.valueobjects.Bestellstatus;
+import at.itkollegimst.sarr.pos1makro.test2.shareddomain.events.BestellungAnlegenEvent;
+import at.itkollegimst.sarr.pos1makro.test2.shareddomain.events.BestellungAnlegenEventData;
 import org.springframework.data.domain.AbstractAggregateRoot;
 
 import javax.persistence.*;
@@ -67,7 +69,9 @@ public class Bestellung extends AbstractAggregateRoot<Bestellung> {
         this.beschreibung = new Beschreibung(bestellungAnlegenCommand.getBeschreibung());
         this.isbn = new ISBN(bestellungAnlegenCommand.getIsbn());
         this.bestelldatum = new Bestelldatum(bestellungAnlegenCommand.getBestelldatum());
-        this.bestellstatus = Bestellstatus.NICHT_BESTELLT;
+        this.bestellstatus = Bestellstatus.BESTELLT;
+
+        addDomainEvent(new BestellungAnlegenEvent(new BestellungAnlegenEventData(bestellungsId.getBestellungsId())));
 
     }
 
